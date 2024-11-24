@@ -189,7 +189,15 @@ const MainPage = () => {
   return (
     <SafeAreaView>
       {/* Header  */}
-      <View>
+      <View style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: 6,
+        position: "absolute",
+        zIndex: 100,
+        width: "100%",
+      }}>
         <TouchableOpacity
           style={styles.drawerButton}
           onPress={() => {

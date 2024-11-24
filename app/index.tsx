@@ -4,11 +4,11 @@ import { Image, SafeAreaView, Text, View } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Font from "expo-font";
-import React from "react";
 import { Redirect, useRouter } from "expo-router";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
 import { fetchAndSetUserData } from "@/Utils/configs/redux/reducers/userSlice";
+import React from "react";
 SplashScreen.preventAutoHideAsync();
 function App() {
   const [appIsReady, setAppIsReady] = useState<boolean>(false);
@@ -46,11 +46,15 @@ function App() {
 
   const onLayoutRootView = useCallback(async () => {
     if (appIsReady) {
-      setSecondSplash(true);
       await SplashScreen.hideAsync();
+      setSecondSplash(true);
       checkUser();
     }
   }, [appIsReady]);
+
+  useEffect(() => {
+    onLayoutRootView();
+  }, [onLayoutRootView]);
 
   if (!appIsReady) {
     return null;

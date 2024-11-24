@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { Provider } from "react-redux";
 import store from "../Utils/configs/redux/store/store";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import React from "react";
 const RootLayout = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>

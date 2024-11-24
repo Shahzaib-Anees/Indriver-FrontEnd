@@ -17,7 +17,7 @@ export default function Layout() {
       initialRouteName="index"
       screenOptions={{
         drawerLabelStyle: {
-          marginLeft: -20,
+          marginLeft: 0,
           fontSize: 18,
           fontWeight: 800,
           fontFamily: "",
@@ -35,7 +35,6 @@ export default function Layout() {
           borderRadius: 0,
           width: "100%",
           marginLeft: 0,
-          paddingHorizontal: 6,
           paddingVertical: 5,
         },
         drawerLabel: "City",
